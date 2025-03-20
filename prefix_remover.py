@@ -1,8 +1,8 @@
 from telegram import Update
 from telegram.ext import Application, MessageHandler, filters, CallbackContext
 
-# Replace with your bot's API token
-TOKEN = "7962967790:AAGaR2P3SK_EyZ-NuypMA9pIu0tDiynCRy8"
+import os
+TOKEN = os.getenv("BOT_TOKEN")
 
 async def modify_message(update: Update, context: CallbackContext):
     """Modify messages in the channel by replacing the prefix."""
