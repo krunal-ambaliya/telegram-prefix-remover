@@ -70,16 +70,16 @@ async def modify_message(update: Update, context: CallbackContext):
 
         # Handle media messages with captions
         elif update.channel_post.caption:
-            new_caption = update.channel_post.caption
             for old, new in prefix_map.items():
-                if new_caption.startswith(old):
-                    new_caption = new_caption.replace(old, new, 1)
+                if old in update.channel_post.caption:
+                    new_caption = update.channel_post.caption.replace(old, new, 1)
                     await context.bot.edit_message_caption(
                         chat_id=update.channel_post.chat_id,
                         message_id=update.channel_post.message_id,
                         caption=new_caption
                     )
-                    return
+                    break
+
 
 def main():
     app = Application.builder().token(TOKEN).build()
