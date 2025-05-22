@@ -5,13 +5,14 @@ from telegram.ext import (
 )
 import os
 
-TOKEN = os.getenv("BOT_TOKEN")
+TOKEN = "7817763805:AAHCmyFPxC8H0U7dTDrGr-mWJtM2LhqhBnk"
 
 # Store prefix replacements
-prefix_map = {}  # Example: { "@ASKOREANDRAMA": "@infinite_backup" }
+prefix_map = {}
 
 async def start_command(update: Update, context: CallbackContext):
-    await update.message.reply_text("👋 Welcome! I'm here to help manage your prefixes.")
+    await update.message.reply_text("👋 Welcome! I'm here to help manage your prefixes." \
+    "use /help for commands ")
 
 async def help_command(update: Update, context: CallbackContext):
     await update.message.reply_text(
