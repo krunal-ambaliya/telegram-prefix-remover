@@ -5,7 +5,7 @@ from telegram.ext import (
 )
 import os
 
-TOKEN = "7817763805:AAHCmyFPxC8H0U7dTDrGr-mWJtM2LhqhBnk"
+TOKEN = "" #bot_token here
 
 # Store prefix replacements
 prefix_map = {}
